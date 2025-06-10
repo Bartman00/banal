@@ -1,6 +1,8 @@
 import math
 
 class Node():
+    """2D Node with some basic utilities
+    """
 
     def __init__(self, index: int, x: float, y: float):
         """Constructor
@@ -36,4 +38,15 @@ class Node():
             bool: True if at the same location
         """
         return self.distance(anode) < 1e-6
+    
+    def dofs(self) -> list[int]:
+        """Return the DOFs for the node
+
+        Returns:
+            list[int]: DOFs
+        """
+        return [self.index * 3, self.index * 3 + 1, self.index * 3 + 2]
+
+
+
     
